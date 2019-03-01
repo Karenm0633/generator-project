@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>generator-project </title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<style>
+    h2 {
+        text-align: center;
+        text-size: 50px
+    }
+
+    div {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 512px;
+    }
+    
+    .inputs {
+        height: 100%;
+    }
+</style>
+<script>
+    $(function() {
+        $("button").click(function() {
+            var name = $('#name').val()
+            var Recipient = $("#Recipient").val()
+            var theme = $("#theme").val()
+            // var FontColor = $("FontColor").val()
+            var certificate = "This certificate is for " + name + " being an awesome student, Given by " + Recipient + " Tnak you"
+            $('h1').html(certificate)
+            if (theme == "gray") {
+                $('.background').css('background-image', 'url("' + 'https://i.pinimg.com/originals/7e/bc/b0/7ebcb0429b76504912504456e63c4dfb.jpg' + '")');
+            }
+            else if (theme == "red") {
+                http: //www.oogazone.com/wp-content/uploads/2018/06/top-10-certificate-template-word-border-red-image.jpg
+                    $('.background').css('background-image', 'url("' + 'http://www.oogazone.com/wp-content/uploads/2018/06/top-10-certificate-template-word-border-red-image.jpg' + '")');
+
+            }
+            else if (theme = "gold") {
+                $('.background').css('background-image', 'url("' + 'https://i.pinimg.com/originals/09/ce/73/09ce7354fc2bf5367fd27ebb02b9dab4.jpg' + '")');
+            }
+            
+            $(".inputs").slideUp("fast")
+        });
+    });
+</script>
+
+<body>
+    <div class="inputs">
+        <h2>Generate your certificate!</h2>
+        Name: <input type="text" id="name" placeholder="Enter their name" required> <br> Recipient: <input type="text" id="Recipient" placeholder="Enter your name " required> <br> Font Color: <input type="color" name="color" required> <br>
+
+        <select id="theme">
+  <option value="gray">gray</option>
+  <option value="gold">gold</option>
+  <option value="red">red</option>
+</select><br>
+        <button>Click here to see</button>
+    </div>
+    <div class="background">
+        <h1></h1>
+    </div>
+
+
+
+</body>
+
+</html>
