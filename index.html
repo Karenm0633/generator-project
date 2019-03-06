@@ -9,10 +9,10 @@
 <style>
     h1 {
         text-align: center;
-        font-size: 25px;
+        font-size: 23px;
         padding-top: 100px;
-        padding-right: 215px;
-        padding-left: 150px;
+        padding-right: 300px;
+        padding-left: 10px;
     }
 
     div {
@@ -24,9 +24,15 @@
 
     .inputs {
         height: 100%;
-        
+
     }
 
+    .background {
+        display: block;
+        margin-left: 600px;
+        margin-right: 600px;
+        width: 50%;
+    }
 </style>
 <script>
     $(function() {
@@ -34,9 +40,10 @@
             var Recipient = $("#Recipient").val()
             var theme = $("#theme").val()
             var Reason = $("#Reason").val()
-            // var FontColor = $("FontColor").val()
-            var certificate = "CERTIFICATE OF" + Reason + "<br> This acknowledges that <br><br><br>" + Recipient + "<br><br><br> HAS BEEN RECOGNIZED AS FOR OURSTANDING ACHIEVEMENT"
+            var color = $("#color").val()
+            var certificate = "CERTIFICATE OF " + Reason + "<br> This acknowledges that <br><br><br>" + Recipient + "<br><br><br> HAS BEEN RECOGNIZED AS FOR OURSTANDING ACHIEVEMENT"
             $('h1').html(certificate)
+    
             if (theme == "gray") {
                 $('.background').css('background-image', 'url("' + 'https://i.pinimg.com/originals/7e/bc/b0/7ebcb0429b76504912504456e63c4dfb.jpg' + '")');
             }
@@ -57,8 +64,8 @@
 <body>
     <div class="inputs">
         <h2>Generate your certificate!</h2>
-        Recipient: <input type="text" id="Recipient" placeholder="Enter their name " required> <br> Font Color: <input type="color" name="color" required> <br> Reason:
-        <input type="text" id="Reason" placeholder="Enter your reason " required> <br> Theme color: <select id="theme">
+        Recipient: <input type="text" id="Recipient" placeholder="Enter their name " required> <br> Reason:
+        <input type="text" id="Reason" placeholder="Enter your reason " required> <br> Font Color: <input type="color" id="color" value="#ff0000" required> <br> Theme color: <select id="theme">
   <option value="gray">gray</option>
   <option value="gold">gold</option>
   <option value="red">red</option>
@@ -67,8 +74,8 @@
     </div>
     <div class="background">
         <h1></h1>
-    
- 
+
+
     </div>
 
 
